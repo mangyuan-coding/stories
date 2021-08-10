@@ -19,17 +19,17 @@ public final class Echo extends Scene {
      * 男主
      */
     @Getter
-    private final Boy niuMy;
+    private final Boy aQiang;
     /**
      * 女主
      */
     @Getter
-    private final Girl zy;
+    private final Girl aZhen;
 
-    private Echo(Boy niuMy, Girl zy) {
-        super(TIME_OF_OCCURRENCE, niuMy, zy);
-        this.niuMy = niuMy;
-        this.zy = zy;
+    private Echo(Boy aQiang, Girl aZhen) {
+        super(TIME_OF_OCCURRENCE, aQiang, aZhen);
+        this.aQiang = aQiang;
+        this.aZhen = aZhen;
     }
 
     /**

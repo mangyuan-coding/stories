@@ -21,17 +21,17 @@ public final class Ending extends Scene {
      * 男主
      */
     @Getter
-    private final Boy niuMy;
+    private final Boy aQiang;
     /**
      * 女主
      */
     @Getter
-    private final Girl zy;
+    private final Girl aZhen;
 
-    private Ending(Boy niuMy, Girl zy) {
-        super(TIME_OF_OCCURRENCE, Building.LANDMARK, niuMy, zy);
-        this.niuMy = niuMy;
-        this.zy = zy;
+    private Ending(Boy aQiang, Girl aZhen) {
+        super(TIME_OF_OCCURRENCE, Building.LANDMARK, aQiang, aZhen);
+        this.aQiang = aQiang;
+        this.aZhen = aZhen;
     }
 
     @Override

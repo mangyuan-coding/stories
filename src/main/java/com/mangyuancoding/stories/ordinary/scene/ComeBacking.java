@@ -21,17 +21,17 @@ public final class ComeBacking extends Scene {
      * 男主
      */
     @Getter
-    private final Boy niuMy;
+    private final Boy aQiang;
     /**
      * 女主
      */
     @Getter
-    private final Girl zy;
+    private final Girl aZhen;
 
-    private ComeBacking(Boy niuMy, Girl zy) {
-        super(TIME_OF_OCCURRENCE, Building.PVG, niuMy, zy);
-        this.niuMy = niuMy;
-        this.zy = zy;
+    private ComeBacking(Boy aQiang, Girl aZhen) {
+        super(TIME_OF_OCCURRENCE, Building.PVG, aQiang, aZhen);
+        this.aQiang = aQiang;
+        this.aZhen = aZhen;
     }
 
     /**
