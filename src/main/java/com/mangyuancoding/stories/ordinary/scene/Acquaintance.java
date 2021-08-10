@@ -41,7 +41,8 @@ public final class Acquaintance extends Scene {
             // ...
         }
 
-        Narrator.say("傻狗，直男！");
+        Narrator.say("傻狗，钢铁直男！");
+        Narrator.say("故事就这么开始了");
     }
 
 
