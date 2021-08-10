@@ -1,4 +1,4 @@
-package com.mangyuancoding.stories.ordinary;
+package com.mangyuancoding.stories.ordinary.scene;
 
 import com.mangyuancoding.stories.Scene;
 import com.mangyuancoding.stories.role.Boy;
@@ -8,9 +8,9 @@ import lombok.Getter;
 import java.time.LocalDateTime;
 
 /**
- * 场景：相识
+ * 场景：相识（聊骚）
  */
-public class Acquaintance extends Scene {
+public final class Acquaintance extends Scene {
 
     /**
      * 开始时间
@@ -32,4 +32,6 @@ public class Acquaintance extends Scene {
         this.niuMy = niuMy;
         this.zy = zy;
     }
+
+
 }

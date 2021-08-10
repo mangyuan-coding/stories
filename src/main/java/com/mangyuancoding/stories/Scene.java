@@ -5,7 +5,6 @@ import com.mangyuancoding.stories.role.Person;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
-import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -33,20 +32,9 @@ public abstract class Scene {
     @Getter
     private Building location;
 
-    protected Scene(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
-        this.characters = new HashSet<>();
-    }
-
     protected Scene(LocalDateTime dateTime, Person... characters) {
         this.dateTime = dateTime;
         this.characters = Set.of(characters);
-    }
-
-    protected Scene(LocalDateTime dateTime, Building location) {
-        this.dateTime = dateTime;
-        this.location = location;
-        this.characters = new HashSet<>();
     }
 
     protected Scene(LocalDateTime dateTime, Building location, Person... characters) {
@@ -54,4 +42,6 @@ public abstract class Scene {
         this.location = location;
         this.characters = Set.of(characters);
     }
+
+
 }
