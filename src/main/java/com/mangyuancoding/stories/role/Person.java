@@ -1,6 +1,8 @@
 package com.mangyuancoding.stories.role;
 
 import com.mangyuancoding.stories.address.City;
+import com.mangyuancoding.stories.mobile.Mobile;
+import com.mangyuancoding.stories.mobile.Wechat;
 import lombok.Getter;
 
 /**
@@ -22,5 +24,19 @@ public abstract class Person {
     protected Person(String name, City hometown) {
         this.name = name;
         this.hometown = hometown;
+    }
+
+    /**
+     * 拿起手机
+     */
+    public Mobile pickUp(Mobile mobile) {
+        return mobile;
+    }
+
+    /**
+     * 控制
+     */
+    public Wechat handle(Wechat wechat) {
+        return wechat;
     }
 }
