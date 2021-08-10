@@ -23,6 +23,10 @@ public class Storyteller extends Person {
      * 讲诉故事
      */
     public void tall() {
-
+        for (Story story : stories) {
+            for (Scene scene : story.getScenes()) {
+                scene.happening();
+            }
+        }
     }
 }

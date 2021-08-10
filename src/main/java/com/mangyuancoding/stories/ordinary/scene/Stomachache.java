@@ -11,9 +11,8 @@ import java.time.LocalDateTime;
  * 肚子痛
  */
 public final class Stomachache extends Scene {
-
     /**
-     * 开始时间
+     * 那天，经历
      */
     private final static LocalDateTime TIME_OF_OCCURRENCE = LocalDateTime.of(2021, 5, 26, 22, 25);
 
@@ -32,5 +31,13 @@ public final class Stomachache extends Scene {
         super(TIME_OF_OCCURRENCE, niuMy, zy);
         this.niuMy = niuMy;
         this.zy = zy;
+    }
+
+    /**
+     * 担心、无措
+     */
+    @Override
+    public void happening() {
+
     }
 }

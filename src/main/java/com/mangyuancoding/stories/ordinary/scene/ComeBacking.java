@@ -9,20 +9,14 @@ import lombok.Getter;
 import java.time.LocalDateTime;
 
 /**
- * 约会
- * <p>
- * 第一次约会
+ * 女神归来
  */
-public final class Dating extends Scene {
+public final class ComeBacking extends Scene {
 
     /**
-     * 那天中午
+     * 归来，等待
      */
-    private final static LocalDateTime TIME_OF_OCCURRENCE = LocalDateTime.of(2021, 5, 29, 13, 42);
-    /**
-     * 地点
-     */
-    private final static Building LOCATION = Building.BAO_SHAN_WANDA_PLAZA;
+    private final static LocalDateTime TIME_OF_OCCURRENCE = LocalDateTime.of(2021, 5, 7, 16, 54);
     /**
      * 男主
      */
@@ -34,14 +28,14 @@ public final class Dating extends Scene {
     @Getter
     private final Girl zy;
 
-    private Dating(Boy niuMy, Girl zy) {
-        super(TIME_OF_OCCURRENCE, LOCATION, niuMy, zy);
+    private ComeBacking(Boy niuMy, Girl zy) {
+        super(TIME_OF_OCCURRENCE, Building.PVG, niuMy, zy);
         this.niuMy = niuMy;
         this.zy = zy;
     }
 
     /**
-     * dating start
+     * 期待&&疲惫
      */
     @Override
     public void happening() {

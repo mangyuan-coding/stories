@@ -13,7 +13,8 @@ import java.time.LocalDateTime;
 public final class Acquaintance extends Scene {
 
     /**
-     * 开始时间
+     * 梦开始的时间
+     * 2021-5-8 16:54
      */
     private final static LocalDateTime TIME_OF_OCCURRENCE = LocalDateTime.of(2021, 5, 7, 16, 54);
     /**
@@ -33,5 +34,11 @@ public final class Acquaintance extends Scene {
         this.zy = zy;
     }
 
+    /**
+     * 梦开始了
+     */
+    @Override
+    public void happening() {
 
+    }
 }

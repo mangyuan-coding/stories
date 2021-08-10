@@ -9,20 +9,16 @@ import lombok.Getter;
 import java.time.LocalDateTime;
 
 /**
- * 约会
- * <p>
- * 第一次约会
+ * 争吵
  */
-public final class Dating extends Scene {
+public final class Quarrel extends Scene {
 
     /**
-     * 那天中午
+     * 那天中午，午饭
+     * <p>
+     * // TODO 忘记了具体哪一天
      */
-    private final static LocalDateTime TIME_OF_OCCURRENCE = LocalDateTime.of(2021, 5, 29, 13, 42);
-    /**
-     * 地点
-     */
-    private final static Building LOCATION = Building.BAO_SHAN_WANDA_PLAZA;
+    private final static LocalDateTime TIME_OF_OCCURRENCE = LocalDateTime.of(2021, 5, 30, 12, 9);
     /**
      * 男主
      */
@@ -34,14 +30,14 @@ public final class Dating extends Scene {
     @Getter
     private final Girl zy;
 
-    private Dating(Boy niuMy, Girl zy) {
-        super(TIME_OF_OCCURRENCE, LOCATION, niuMy, zy);
+    private Quarrel(Boy niuMy, Girl zy) {
+        super(TIME_OF_OCCURRENCE, Building.LANDMARK, niuMy, zy);
         this.niuMy = niuMy;
         this.zy = zy;
     }
 
     /**
-     * dating start
+     * 担心，难过，却不在意
      */
     @Override
     public void happening() {

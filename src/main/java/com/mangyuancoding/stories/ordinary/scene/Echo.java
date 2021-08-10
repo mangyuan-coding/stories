@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
  * 女神的回应
  */
 public final class Echo extends Scene {
-
     /**
      * 开始时间
      */
@@ -31,5 +30,13 @@ public final class Echo extends Scene {
         super(TIME_OF_OCCURRENCE, niuMy, zy);
         this.niuMy = niuMy;
         this.zy = zy;
+    }
+
+    /**
+     * 春天来了
+     */
+    @Override
+    public void happening() {
+
     }
 }

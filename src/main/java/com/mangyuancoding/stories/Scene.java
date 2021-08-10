@@ -22,26 +22,47 @@ public abstract class Scene {
     @Getter
     private final Set<Person> characters;
     /**
-     * 时间
+     * 场景开始时间
      */
     @Getter
-    private final LocalDateTime dateTime;
+    private final LocalDateTime startTime;
+    /**
+     * 场景结束时间
+     */
+    @Getter
+    private LocalDateTime endTime;
     /**
      * 地址
      */
     @Getter
     private Building location;
 
-    protected Scene(LocalDateTime dateTime, Person... characters) {
-        this.dateTime = dateTime;
+    protected Scene(LocalDateTime startTime, Person... characters) {
+        this.startTime = startTime;
         this.characters = Set.of(characters);
     }
 
-    protected Scene(LocalDateTime dateTime, Building location, Person... characters) {
-        this.dateTime = dateTime;
+    protected Scene(LocalDateTime startTime, LocalDateTime endTime, Person... characters) {
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.characters = Set.of(characters);
+    }
+
+    protected Scene(LocalDateTime startTime, Building location, Person... characters) {
+        this.startTime = startTime;
         this.location = location;
         this.characters = Set.of(characters);
     }
 
+    protected Scene(LocalDateTime startTime, LocalDateTime endTime, Building location, Person... characters) {
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.location = location;
+        this.characters = Set.of(characters);
+    }
 
+    /**
+     * 一些事情发生了
+     */
+    public abstract void happening();
 }

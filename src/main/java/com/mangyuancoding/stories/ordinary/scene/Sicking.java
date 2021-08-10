@@ -31,4 +31,12 @@ public final class Sicking extends Scene {
         this.niuMy = niuMy;
         this.zy = zy;
     }
+
+    /**
+     * 心疼
+     */
+    @Override
+    public void happening() {
+
+    }
 }
