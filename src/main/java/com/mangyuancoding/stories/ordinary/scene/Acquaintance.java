@@ -21,13 +21,13 @@ public final class Acquaintance extends Scene {
     public void happening() {
         // 旁白：大约是在 2021-5-8 16：54
         Narrator.say("大约是在" + START_TIME);
-        // 阿强的手机响了
+        // 手机响了
         aQiangMobile.shaking();
         // 阿强拿起手机，打开了微信
         String message = aQiang.pickUp(aQiangMobile).openWechat().read();
         // 这个地方为了故事的连贯性，将消息显示出来
         assert message.equals("我通过了你的朋友验证请求，现在我们可以开始聊天了");
-        // 阿强拿起手机，发送消息“pidan是不是请假了”
+        // 阿强回：pidan是不是请假了
         aQiang.handle(aQiangMobile.wechat()).write("pidan是不是请假了").send();
         // 对面回信了
         String receivedMessage = aQiangMobile.wechat().receiveMessage();
