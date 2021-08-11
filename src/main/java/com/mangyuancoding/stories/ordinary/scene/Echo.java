@@ -13,7 +13,7 @@ import lombok.Getter;
 import java.time.LocalDateTime;
 
 /**
- * 女神的回应
+ * 场景：女神的回应
  */
 public final class Echo extends Scene {
 
