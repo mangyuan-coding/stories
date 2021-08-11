@@ -12,6 +12,11 @@ public abstract class Mobile {
     private Map<Class<?>, MobileApplication> installedApps;
 
     /**
+     * 当前正在运行的应用
+     */
+    private MobileApplication currentApp;
+
+    /**
      * 震动
      */
     public Event shaking() {
@@ -21,8 +26,7 @@ public abstract class Mobile {
 
     public Wechat openWechat() {
         Wechat wechat = wechat();
-        // open wechat
-        // and return
+        this.currentApp = wechat;
         return wechat;
     }
 

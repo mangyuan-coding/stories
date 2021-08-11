@@ -20,12 +20,12 @@ public final class Acquaintance extends Scene {
      * 一次手机振动，梦开始了
      */
     @Override
-    public void on(Event mobileShaking) {
+    public void on(Event event) {
         // 旁白：大约是在春季
         Narrator.say("大约是在" + START_TIME);
 
         // 手机震了
-        assert mobileShaking.equals(aQiangMobile.shaking());
+        assert event.equals(aQiangMobile.shaking());
         // 阿强拿起手机，打开了微信，读取了消息
         Wechat.Message message = aQiang.pickUp(aQiangMobile).openWechat().readWechatMessage();
         // 消息是aZhen发来的 (这个地方为了故事的连贯性，将发送人名称给展示出来)

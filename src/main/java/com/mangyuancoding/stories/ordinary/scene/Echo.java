@@ -13,7 +13,7 @@ import lombok.Getter;
 import java.time.LocalDateTime;
 
 /**
- * 场景：回应（阿珍的第一次主动聊天）
+ * 场景：回响（阿珍对阿强的主动尝试了一次回应）
  */
 public final class Echo extends Scene {
 
@@ -21,14 +21,14 @@ public final class Echo extends Scene {
      * 也是始于手机振动
      */
     @Override
-    public void on(Event mobileShaking) {
+    public void on(Event event) {
         Narrator.say("时间：" + START_TIME);
         // 阿强想：已经很久没聊天了
         aQiang.think("It's been a long time since the last chat.");
         // 旁白：才过去两天
         Narrator.say("Only two days have passed.");
 
-        assert mobileShaking.equals(aQiangMobile.shaking());
+        assert event.equals(aQiangMobile.shaking());
         // 看了下微信。“阿珍第一次主动聊天，阿强的内心发生了一些变化”。
         // “这个地方可以点进aQiang.readWechatMessage()里面看到阿强内心的变化”
         Wechat.Message message = aQiang.pickUp(aQiangMobile).openWechat().readWechatMessage();

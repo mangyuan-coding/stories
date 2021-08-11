@@ -2,7 +2,6 @@ package com.mangyuancoding.stories.role;
 
 import com.mangyuancoding.stories.address.City;
 import com.mangyuancoding.stories.mobile.Mobile;
-import com.mangyuancoding.stories.mobile.MobileApplication;
 import com.mangyuancoding.stories.mobile.Wechat;
 import lombok.Getter;
 
@@ -24,10 +23,6 @@ public abstract class Person {
      * 手持手机
      */
     private Mobile handle;
-    /**
-     * 当前使用的应用
-     */
-    private MobileApplication currentApp;
     /**
      * 当前的心情
      */
@@ -54,7 +49,7 @@ public abstract class Person {
      * 打开微信
      */
     public Person openWechat() {
-        this.currentApp = this.handle.openWechat();
+        this.handle.openWechat();
         return this;
     }
 
@@ -62,19 +57,14 @@ public abstract class Person {
      * 读消息
      */
     public Wechat.Message readWechatMessage() {
-        if (this.currentApp instanceof Wechat) {
-            return ((Wechat) this.currentApp).read();
-        }
-        return null;
+        return this.handle.wechat().read();
     }
 
     /**
      * 往微信键入
      */
     public Person writeToWechat(String content) {
-        if (this.currentApp instanceof Wechat) {
-            ((Wechat) this.currentApp).write(content);
-        }
+        this.handle.wechat().write(content);
         return this;
     }
 
@@ -82,9 +72,7 @@ public abstract class Person {
      * 发送消息
      */
     public void send() {
-        if (this.currentApp instanceof Wechat) {
-            ((Wechat) this.currentApp).send();
-        }
+        this.handle.wechat().send();
     }
 
     /**
@@ -107,7 +95,8 @@ public abstract class Person {
     public enum Felling {
 
         // 激动的
-        EXCITED
-
+        EXCITED,
+        // 放松的
+        RELAXED,
     }
 }
