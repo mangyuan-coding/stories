@@ -1,9 +1,10 @@
 package com.mangyuancoding.stories.ordinary.scene;
 
+import com.mangyuancoding.stories.Event;
 import com.mangyuancoding.stories.Scene;
 import com.mangyuancoding.stories.address.Building;
-import com.mangyuancoding.stories.role.Boy;
-import com.mangyuancoding.stories.role.Girl;
+import com.mangyuancoding.stories.role.AQiang;
+import com.mangyuancoding.stories.role.AZhen;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
@@ -14,6 +15,16 @@ import java.time.LocalDateTime;
  * 第一次约会
  */
 public final class Dating extends Scene {
+
+    /**
+     * dating start
+     */
+    @Override
+    public void on(Event event) {
+
+    }
+
+
 
     /**
      * 那天中午
@@ -27,24 +38,18 @@ public final class Dating extends Scene {
      * 男主
      */
     @Getter
-    private final Boy aQiang;
+    private final AQiang aQiang;
     /**
      * 女主
      */
     @Getter
-    private final Girl aZhen;
+    private final AZhen aZhen;
 
-    private Dating(Boy aQiang, Girl aZhen) {
+    private Dating(AQiang aQiang, AZhen aZhen) {
         super(TIME_OF_OCCURRENCE, LOCATION, aQiang, aZhen);
         this.aQiang = aQiang;
         this.aZhen = aZhen;
     }
 
-    /**
-     * dating start
-     */
-    @Override
-    public void happening() {
 
-    }
 }

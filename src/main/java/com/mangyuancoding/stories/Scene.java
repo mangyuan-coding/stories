@@ -62,7 +62,7 @@ public abstract class Scene {
     }
 
     /**
-     * 一些事情发生了
+     * 始于某件事
      */
-    public abstract void happening();
+    public abstract void on(Event event);
 }

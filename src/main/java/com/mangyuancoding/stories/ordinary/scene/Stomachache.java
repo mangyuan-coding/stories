@@ -1,8 +1,9 @@
 package com.mangyuancoding.stories.ordinary.scene;
 
+import com.mangyuancoding.stories.Event;
 import com.mangyuancoding.stories.Scene;
-import com.mangyuancoding.stories.role.Boy;
-import com.mangyuancoding.stories.role.Girl;
+import com.mangyuancoding.stories.role.AQiang;
+import com.mangyuancoding.stories.role.AZhen;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
@@ -20,14 +21,14 @@ public final class Stomachache extends Scene {
      * 男主
      */
     @Getter
-    private final Boy aQiang;
+    private final AQiang aQiang;
     /**
      * 女主
      */
     @Getter
-    private final Girl aZhen;
+    private final AZhen aZhen;
 
-    private Stomachache(Boy aQiang, Girl aZhen) {
+    private Stomachache(AQiang aQiang, AZhen aZhen) {
         super(TIME_OF_OCCURRENCE, aQiang, aZhen);
         this.aQiang = aQiang;
         this.aZhen = aZhen;
@@ -37,7 +38,7 @@ public final class Stomachache extends Scene {
      * 担心、无措
      */
     @Override
-    public void happening() {
+    public void on(Event event) {
 
     }
 }

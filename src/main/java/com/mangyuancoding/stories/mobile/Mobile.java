@@ -1,5 +1,7 @@
 package com.mangyuancoding.stories.mobile;
 
+import com.mangyuancoding.stories.Event;
+
 import java.util.Map;
 
 /**
@@ -12,8 +14,9 @@ public abstract class Mobile {
     /**
      * 震动
      */
-    public void shaking() {
-
+    public Event shaking() {
+        return new Event() {
+        };
     }
 
     public Wechat openWechat() {

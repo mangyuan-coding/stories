@@ -1,6 +1,6 @@
 package com.mangyuancoding.stories;
 
-import com.mangyuancoding.stories.role.Boy;
+import com.mangyuancoding.stories.role.AQiang;
 import com.mangyuancoding.stories.role.Person;
 
 import java.util.Set;
@@ -15,8 +15,8 @@ public class Storyteller extends Person {
      */
     private Set<Story> stories;
 
-    public Storyteller(Boy boy) {
-        super(boy.getName(), boy.getHometown());
+    public Storyteller(AQiang AQiang) {
+        super(AQiang.name(), AQiang.getHometown());
     }
 
     /**
@@ -25,7 +25,7 @@ public class Storyteller extends Person {
     public void tall() {
         for (Story story : stories) {
             for (Scene scene : story.getScenes()) {
-                scene.happening();
+//                scene.happening();
             }
         }
     }
