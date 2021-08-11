@@ -9,7 +9,7 @@ public class Calender {
 
     private final static ThreadLocal<Calender> holder = new InheritableThreadLocal<>();
 
-    public static boolean isWorkDay(LocalDate localDate) {
+    public static boolean isWorkingDay(LocalDate localDate) {
         // TODO 判断是否是工作日
         return true;
     }

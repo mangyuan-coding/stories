@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 /**
  * 女神归来
  */
-public final class ComeBacking extends Scene {
+public final class ComingBack extends Scene {
 
     /**
      * 归来，等待
@@ -29,7 +29,7 @@ public final class ComeBacking extends Scene {
     @Getter
     private final AZhen aZhen;
 
-    private ComeBacking(AQiang aQiang, AZhen aZhen) {
+    private ComingBack(AQiang aQiang, AZhen aZhen) {
         super(TIME_OF_OCCURRENCE, Building.PVG, aQiang, aZhen);
         this.aQiang = aQiang;
         this.aZhen = aZhen;
