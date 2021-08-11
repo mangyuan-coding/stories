@@ -7,6 +7,7 @@ import com.mangyuancoding.stories.mobile.Mobile;
 import com.mangyuancoding.stories.mobile.Wechat;
 import com.mangyuancoding.stories.role.AQiang;
 import com.mangyuancoding.stories.role.AZhen;
+import com.mangyuancoding.stories.role.Person;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
@@ -32,7 +33,9 @@ public final class Echo extends Scene {
         // “这个地方可以点进aQiang.readWechatMessage()里面看到阿强内心的变化”
         Wechat.Message message = aQiang.pickUp(aQiangMobile).openWechat().readWechatMessage();
         assert message.getSendPersonName().equals(aZhen.name());
-        assert message.getSendPersonName().equals("我跟你说 我打疫苗了 在观察");
+        assert message.getContent().equals("我跟你说 我打疫苗了 在观察");
+        // 阿强有点小激动
+        assert Person.Felling.EXCITED.equals(aQiang.currentFelling());
         // 阿强回：#斜眼笑
         aQiang.writeToWechat("#斜眼笑").send();
 

@@ -28,6 +28,10 @@ public abstract class Person {
      * 当前使用的应用
      */
     private MobileApplication currentApp;
+    /**
+     * 当前的心情
+     */
+    private Felling currentFelling;
 
     protected Person(String name, City hometown) {
         this.name = name;
@@ -81,5 +85,29 @@ public abstract class Person {
         if (this.currentApp instanceof Wechat) {
             ((Wechat) this.currentApp).send();
         }
+    }
+
+    /**
+     * 改变心情
+     */
+    protected void change(Felling felling) {
+        this.currentFelling = felling;
+    }
+
+    /**
+     * 当前的心情
+     */
+    public Felling currentFelling() {
+        return this.currentFelling;
+    }
+
+    /**
+     * 心情
+     */
+    public enum Felling {
+
+        // 激动的
+        EXCITED
+
     }
 }

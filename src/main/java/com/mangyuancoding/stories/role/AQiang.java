@@ -32,6 +32,7 @@ public final class AQiang extends Person {
         Wechat.Message message = super.readWechatMessage();
         // 第一次收到喜欢女孩发来的信息。变得激动了
         if (!hasReceivedMessageFromLikedGirl && GIRL_NAME_OF_LIKED.equals(message.getSendPersonName())) {
+            super.change(Felling.EXCITED);
             this.hasReceivedMessageFromLikedGirl = true;
         }
         return message;
