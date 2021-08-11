@@ -44,7 +44,7 @@ public final class Echo extends Scene {
             // ...
         }
 
-        Narrator.say("阿强脸上总是挂着笑容");
+        Narrator.say("阿强的嘴角是歪的");
     }
 
 
