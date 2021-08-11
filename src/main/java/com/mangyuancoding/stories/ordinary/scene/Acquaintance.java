@@ -19,7 +19,7 @@ public final class Acquaintance extends Scene {
      */
     @Override
     public void happening() {
-        // 旁白：大约是在 2021-5-8 16：54
+        // 旁白：大约是在春季
         Narrator.say("大约是在" + START_TIME);
         // 手机响了
         aQiangMobile.shaking();
@@ -27,7 +27,7 @@ public final class Acquaintance extends Scene {
         String message = aQiang.pickUp(aQiangMobile).openWechat().read();
         // 这个地方为了故事的连贯性，将消息显示出来
         assert message.equals("我通过了你的朋友验证请求，现在我们可以开始聊天了");
-        // 阿强回：pidan是不是请假了
+        // 阿强问：pidan是不是请假了
         aQiang.handle(aQiangMobile.wechat()).write("pidan是不是请假了").send();
         // 对面回信了
         String receivedMessage = aQiangMobile.wechat().receiveMessage();
@@ -36,7 +36,7 @@ public final class Acquaintance extends Scene {
         // 阿强回：嗷，你头像的狗子是自己养的么
         aQiang.handle(aQiangMobile.wechat()).write("嗷，你头像的狗子是自己养的么").send();
 
-        // 一些聊天内容就不展示了
+        // 以下省略
         {
             // ...
         }
