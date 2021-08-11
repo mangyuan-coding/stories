@@ -13,12 +13,12 @@ import lombok.Getter;
 import java.time.LocalDateTime;
 
 /**
- * 场景：女神的回应
+ * 场景：回应（阿珍的第一次主动聊天）
  */
 public final class Echo extends Scene {
 
     /**
-     * 也是始于手机振动，春天来了
+     * 也是始于手机振动
      */
     @Override
     public void on(Event mobileShaking) {
