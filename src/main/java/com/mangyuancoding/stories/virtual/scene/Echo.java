@@ -28,8 +28,10 @@ public final class Echo extends Scene {
         aQiang.think("It's been a long time since the last chat.");
         Narrator.say("Only two days have passed.");
 
-        // aQiang.readWechatMessage()
-        // aQiang.felling change to excited
+        // because of the first time, aQiang.felling change to excite
+        // the change in aQiang.readWechatMessage() inner
+        // If you are interested, you can clone the project form "https://github.com/mangyuan-coding/stories.git".
+        // give me a star, thinks
         Wechat.Message message = aQiang.pickUp(aQiangMobile).openWechat().readWechatMessage();
 
         // 这个地方显示展示消息的内容
