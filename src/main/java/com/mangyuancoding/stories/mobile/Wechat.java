@@ -1,8 +1,6 @@
 package com.mangyuancoding.stories.mobile;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -54,7 +52,7 @@ public class Wechat extends MobileApplication {
     public Message read() {
         Message message = this.unReadMessages.poll();
         assert message != null;
-        this.currentChatting = message.sendPersonName;
+        this.currentChatting = message.sentPersonName;
         return message;
     }
 
@@ -66,18 +64,33 @@ public class Wechat extends MobileApplication {
      * 微信消息
      */
     @Setter
-    @Getter
-    @Builder
     @NoArgsConstructor
     @AllArgsConstructor
     public static class Message {
         /**
          * 发送人的姓名
          */
-        private String sendPersonName;
+        private String sentPersonName;
+
+        /**
+         * 消息内容
+         */
+        public String content() {
+            return content;
+        }
+
+        /**
+         * 发送者名称
+         */
+        public String sentPersonName() {
+            return sentPersonName;
+        }
+
         /**
          * 消息内容
          */
         private String content;
+
+
     }
 }

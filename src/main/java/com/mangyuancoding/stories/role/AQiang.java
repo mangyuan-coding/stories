@@ -1,5 +1,6 @@
 package com.mangyuancoding.stories.role;
 
+import com.mangyuancoding.stories.Event;
 import com.mangyuancoding.stories.address.City;
 import com.mangyuancoding.stories.mobile.Mobile;
 import com.mangyuancoding.stories.mobile.Wechat;
@@ -25,13 +26,18 @@ public final class AQiang extends Person {
         return this;
     }
 
+    public Event invite(Person other) {
+        return new Event() {
+        };
+    }
+
     /**
      * 读消息
      */
     public Wechat.Message readWechatMessage() {
         Wechat.Message message = super.readWechatMessage();
         // 第一次收到喜欢女孩发来的信息。变得激动了
-        if (!hasReceivedMessageFromLikedGirl && GIRL_NAME_OF_LIKED.equals(message.getSendPersonName())) {
+        if (!hasReceivedMessageFromLikedGirl && GIRL_NAME_OF_LIKED.equals(message.sentPersonName())) {
             super.change(Felling.EXCITED);
             this.hasReceivedMessageFromLikedGirl = true;
         }

@@ -1,4 +1,4 @@
-package com.mangyuancoding.stories.ordinary.scene;
+package com.mangyuancoding.stories.virtual.scene;
 
 import com.mangyuancoding.stories.Event;
 import com.mangyuancoding.stories.Narrator;
@@ -13,38 +13,36 @@ import lombok.Getter;
 import java.time.LocalDateTime;
 
 /**
- * 场景：回响（阿珍对阿强的主动尝试了一次回应）
+ * Scene：echo（AZhen actively contacted AQiang for the first time）
  */
 public final class Echo extends Scene {
 
     /**
-     * 也是始于手机振动
+     * this event is mobile-shaking
      */
     @Override
     public void on(Event event) {
-        Narrator.say("时间：" + START_TIME);
-        // 阿强想：已经很久没聊天了
+        assert event.equals(aQiangMobile.shaking());
+        Narrator.say("Time at " + START_TIME);
+
         aQiang.think("It's been a long time since the last chat.");
-        // 旁白：才过去两天
         Narrator.say("Only two days have passed.");
 
-        assert event.equals(aQiangMobile.shaking());
-        // 看了下微信。“阿珍第一次主动聊天，阿强的内心发生了一些变化”。
-        // “这个地方可以点进aQiang.readWechatMessage()里面看到阿强内心的变化”
+        // aQiang.readWechatMessage()
+        // aQiang.felling change to excited
         Wechat.Message message = aQiang.pickUp(aQiangMobile).openWechat().readWechatMessage();
-        assert message.getSentPersonName().equals(aZhen.name());
-        assert message.getContent().equals("我跟你说 我打疫苗了 在观察");
-        // 阿强有点小激动
-        assert Person.Felling.EXCITED.equals(aQiang.currentFelling());
-        // 阿强回：#斜眼笑
-        aQiang.writeToWechat("#斜眼笑").send();
 
-        // 以下省略
+        // 这个地方显示展示消息的内容
+        assert message.sentPersonName().equals(aZhen.name());
+        assert message.content().equals("Do you know 'Amway'?");
+        assert Person.Felling.EXCITED.equals(aQiang.currentFelling());
+
         {
+            aQiang.writeToWechat("#laugh").send();
             // ...
         }
 
-        Narrator.say("阿强的嘴角是歪的");
+        Narrator.say("The corners of A_Qiang's mouth kept rising, but he didn't know.");
     }
 
 
