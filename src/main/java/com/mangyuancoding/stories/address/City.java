@@ -8,12 +8,4 @@ public enum City {
      * 上海
      */
     SHANG_HAI,
-    /**
-     * 河南
-     */
-    HE_NAN,
-    /**
-     * 库尔勒
-     */
-    KORLA,
 }
