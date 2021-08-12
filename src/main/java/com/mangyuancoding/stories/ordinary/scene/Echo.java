@@ -32,8 +32,8 @@ public final class Echo extends Scene {
         // 看了下微信。“阿珍第一次主动聊天，阿强的内心发生了一些变化”。
         // “这个地方可以点进aQiang.readWechatMessage()里面看到阿强内心的变化”
         Wechat.Message message = aQiang.pickUp(aQiangMobile).openWechat().readWechatMessage();
-        assert message.getSentPersonName().equals(aZhen.name());
-        assert message.getContent().equals("我跟你说 我打疫苗了 在观察");
+        assert message.sentPersonName().equals(aZhen.name());
+        assert message.content().equals("我跟你说 我打疫苗了 在观察");
         // 阿强有点小激动
         assert Person.Felling.EXCITED.equals(aQiang.currentFelling());
         // 阿强回：#斜眼笑

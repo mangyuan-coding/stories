@@ -1,7 +1,13 @@
 package com.mangyuancoding.stories.ordinary;
 
 import com.mangyuancoding.stories.Story;
-import com.mangyuancoding.stories.ordinary.scene.*;
+import com.mangyuancoding.stories.ordinary.scene.Acquaintance;
+import com.mangyuancoding.stories.ordinary.scene.Dating;
+import com.mangyuancoding.stories.ordinary.scene.Echo;
+import com.mangyuancoding.stories.ordinary.scene.Ending;
+import com.mangyuancoding.stories.ordinary.scene.Quarrel;
+import com.mangyuancoding.stories.ordinary.scene.Sicking;
+import com.mangyuancoding.stories.ordinary.scene.Stomachache;
 import lombok.Builder;
 
 /**
@@ -40,4 +46,8 @@ public final class OrdinaryStory extends Story {
     }
 
 
+    @Override
+    public void reading() {
+
+    }
 }

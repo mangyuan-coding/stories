@@ -29,16 +29,16 @@ public final class Acquaintance extends Scene {
         // 阿强拿起手机，打开了微信，读取了消息
         Wechat.Message message = aQiang.pickUp(aQiangMobile).openWechat().readWechatMessage();
         // 消息是aZhen发来的 (这个地方为了故事的连贯性，将发送人名称给展示出来)
-        assert message.getSentPersonName().equals(aZhen.name());
+        assert message.sentPersonName().equals(aZhen.name());
         // 内容：我通过了你的朋友验证请求，现在我们可以开始聊天了(这个地方为了故事的连贯性，将消息显示出来)
-        assert message.getContent().equals("我通过了你的朋友验证请求，现在我们可以开始聊天了");
+        assert message.content().equals("我通过了你的朋友验证请求，现在我们可以开始聊天了");
         // 阿强问：pidan是不是请假了
         aQiang.writeToWechat("pidan是不是请假了").send();
         // 对面回信了
         aQiangMobile.shaking();
         message = aQiang.readWechatMessage();
-        assert message.getSentPersonName().equals(aZhen.name());
-        assert message.getContent().equals("对的休假了，下周一就在了");
+        assert message.sentPersonName().equals(aZhen.name());
+        assert message.content().equals("对的休假了，下周一就在了");
         // 阿强回：嗷，你头像的狗子是自己养的么
         aQiang.writeToWechat("嗷，你头像的狗子是自己养的么").send();
 
