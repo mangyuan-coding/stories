@@ -20,4 +20,6 @@ public abstract class Story {
     protected Story(Scene... scenes) {
         this.scenes = List.of(scenes);
     }
+
+    public abstract void reading();
 }
