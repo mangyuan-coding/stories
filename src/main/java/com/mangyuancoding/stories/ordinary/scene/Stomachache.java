@@ -3,13 +3,12 @@ package com.mangyuancoding.stories.ordinary.scene;
 import com.mangyuancoding.stories.Event;
 import com.mangyuancoding.stories.Narrator;
 import com.mangyuancoding.stories.Scene;
+import com.mangyuancoding.stories.address.Building;
 import com.mangyuancoding.stories.role.AQiang;
 import com.mangyuancoding.stories.role.AZhen;
-import com.mangyuancoding.stories.time.Calender;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 /**
  * 肚子痛
@@ -21,11 +20,18 @@ public final class Stomachache extends Scene {
      */
     @Override
     public void on(Event event) {
-        // 工作日，午夜之后
-        assert Calender.isWorkingDay(START_TIME.toLocalDate()) && START_TIME.toLocalTime().isAfter(LocalTime.MIDNIGHT);
+        Narrator.say("background:");
+        Narrator.say(aQiang.name() + " and " + aZhen.name() + " working together at" + Building.LANDMARK);
+
         // 阿珍肚子疼
         assert event.equals(aZhen.hasAStomachache());
+        aQiang.sayTo("Let's go have porridge", aZhen);
+        Narrator.say("they have a dinner even though they did not find the porridge");
 
+
+        // they have a dinner
+
+        // aQiang negligence the thing
         Narrator.say("时间：" + START_TIME);
     }
 
@@ -33,7 +39,7 @@ public final class Stomachache extends Scene {
     /**
      * 那天，经历
      */
-    private final static LocalDateTime START_TIME = LocalDateTime.of(2021, 5, 26, 22, 25);
+    private final static LocalDateTime START_TIME = LocalDateTime.of(2021, 5, 26, 18, 24);
     /**
      * 出发去找阿珍的时间
      */

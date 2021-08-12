@@ -1,5 +1,7 @@
 package com.mangyuancoding.stories.role;
 
+import com.mangyuancoding.stories.action.Action;
+import com.mangyuancoding.stories.action.Actor;
 import com.mangyuancoding.stories.address.City;
 import com.mangyuancoding.stories.mobile.Mobile;
 import com.mangyuancoding.stories.mobile.Wechat;
@@ -8,7 +10,7 @@ import lombok.Getter;
 /**
  * 表明一个人
  */
-public abstract class Person {
+public abstract class Person implements Actor {
 
     /**
      * 姓名
@@ -43,6 +45,11 @@ public abstract class Person {
     public Person pickUp(Mobile mobile) {
         this.handle = mobile;
         return this;
+    }
+
+    @Override
+    public void done(Action action) {
+
     }
 
     /**
@@ -87,6 +94,20 @@ public abstract class Person {
      */
     public Felling currentFelling() {
         return this.currentFelling;
+    }
+
+    /**
+     * 对另一个人说话
+     */
+    public void sayTo(String content, Person another) {
+        another.listen(content);
+    }
+
+    /**
+     * 听到
+     */
+    public void listen(String content) {
+
     }
 
     /**
